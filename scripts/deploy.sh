@@ -11,7 +11,7 @@ aws lambda get-alias \
      > output.json
 
 cat output.json
-DEVELOPMENT_ALIAS_VERSION= $( cat output.json | jq -r '.FunctionVersion')
+DEVELOPMENT_ALIAS_VERSION=$( cat output.json | jq -r '.FunctionVersion')
 
 cd function
 zip ../function.zip *
@@ -22,7 +22,7 @@ aws lambda update-function-code \
    --zip-file fileb://function.zip \
    --publish \
    > output.json
-LATEST_VERSION  = $(cat output.json | jq -r '.Version')
+LATEST_VERSION=$(cat output.json | jq -r '.Version')
 
 if [[ $DEVELOPMENT_ALIAS_VERSION -ge $LATEST_VERSION ]]; then
     exit 0
