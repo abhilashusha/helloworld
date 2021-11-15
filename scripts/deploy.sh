@@ -18,7 +18,7 @@ zip ../function.zip *
 cd ..
 
 aws lambda update-function-code \
-   --function-name $DEPLOY FUNCTION_NAME \
+   --function-name $DEPLOY_FUNCTION_NAME \
    --zip-file fileb://function.zip \
    --publish \
    > output.json
