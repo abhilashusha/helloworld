@@ -3,8 +3,15 @@ set -x -e
 aws lambda get-alias \
      --function-name $DEPLOY_FUNCTION_NAME \
      --name $DEPLOY_ALIAS_NAME \
+     
+
+aws lambda get-alias \
+     --function-name $DEPLOY_FUNCTION_NAME \
+     --name $DEPLOY_ALIAS_NAME \
      > output.json
-     DEVELOPMENT_ALIAS_VERSION= $( cat output.json | jq -r ;.FunctionVersion)
+
+cat output.json
+DEVELOPMENT_ALIAS_VERSION= $( cat output.json | jq -r ;.FunctionVersion)
 
 cd function
 zip ../function.zip *
