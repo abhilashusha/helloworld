@@ -47,6 +47,6 @@ REVISION=revisionType=S3,s3Location={bucket=$DEPLOY_BUCKET_NAME,key='buildspec.y
 
 aws deploy create-deployment \
    --application-name $DEPLOY_APPLICATION_NAME \
-   --deployment-group-name $DEPLOY_DEPLOYMENT_GROUP_NAME 
+   --deployment-group-name $DEPLOY_DEPLOYMENT_GROUP_NAME \
    --deployment-config-name CodeDeployDefault.LambdaAllAtOnce \
    --revision $REVISION
