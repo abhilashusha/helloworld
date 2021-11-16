@@ -29,9 +29,9 @@ if [[ $DEVELOPMENT_ALIAS_VERSION -ge $LATEST_VERSION ]]; then
 fi
 
 cat > $DEPLOY_APPSPEC_FILE <<- EOM
-version 0.2
+version 0.0
 Resources:
-  - myLambdaFunction:
+  - helloworld:
       Type: AWS::Lambda::Function
       Properties:
          Name : "$DEPLOY_FUNCTION_NAME"
