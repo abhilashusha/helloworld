@@ -29,15 +29,15 @@ if [[ $DEVELOPMENT_ALIAS_VERSION -ge $LATEST_VERSION ]]; then
 fi
 
 cat > $DEPLOY_APPSPEC_FILE <<- EOM
-version 0.0
+version 0.2
 Resources:
-  -myLambdaFunction:
-     Type: AWS::Lambda::Function
-     Properties:
-       Name : "$DEPLOY_FUNCTION_NAME"
-       Alias:  "$DEPLOY_ALIAS_NAME"
-       CurrentVersion:  "$DEVELOPMENT_ALIAS_VERSION"
-       TargetVersion: "$LATEST_VERSION"
+  - myLambdaFunction:
+      Type: AWS::Lambda::Function
+      Properties:
+         Name : "$DEPLOY_FUNCTION_NAME"
+         Alias:  "$DEPLOY_ALIAS_NAME"
+         CurrentVersion:  "$DEVELOPMENT_ALIAS_VERSION"
+         TargetVersion: "$LATEST_VERSION"
 EOM
 aws s3 cp \
     $DEPLOY_APPSPEC_FILE \
