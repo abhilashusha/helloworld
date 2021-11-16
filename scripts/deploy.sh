@@ -43,7 +43,7 @@ aws s3 cp \
     $DEPLOY_APPSPEC_FILE \
     s3://$DEPLOY_BUCKET_NAME/$DEPLOY_APPSPEC_FILE
 
-REVISION=revisionType=S3,s3Location={bucket=$DEPLOY_BUCKET_NAME,key='buildspec.yml'}
+REVISION=revisionType=S3,s3Location={bucket=$DEPLOY_BUCKET_NAME,key='buildspec.yml',bundleType=YAML}
 
 aws deploy create-deployment \
    --application-name $DEPLOY_APPLICATION_NAME \
