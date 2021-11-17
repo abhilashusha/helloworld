@@ -6,5 +6,6 @@ phases:
          - cd lambda-function
          - curl -o terraform.zip https://releases.hashicorp.com/terraform/1.0.11/terraform_1.0.11_linux_amd64.zip
          - unzip terraform.zip
+         - ls -ltr
          - terraform init
          - terraform plan
