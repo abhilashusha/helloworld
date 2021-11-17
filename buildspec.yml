@@ -23,6 +23,8 @@ phases:
   build:
      commands:
       #  - bash  scripts/deploy.sh   
+         - ls -ltr
+         - ./sonar-scanner -Dsonar.login=$LOGIN -Dsonar.host.url=$HOST -Dsonar.projectKey=$Project -Dsonar.organization=$Organization 
          - sonar-scanner -Dsonar.login=$LOGIN -Dsonar.host.url=$HOST -Dsonar.projectKey=$Project -Dsonar.organization=$Organization          
          - sleep 5
          - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=$Project >result.json
