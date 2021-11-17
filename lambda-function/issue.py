@@ -1,16 +1,5 @@
-import yaml
+import subprocess
 
-class Person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-
-    def __str__(self):
-        return f'<Person: {self.name} - {self.age}>'
-
-    def __repr__(self):
-        return str(self)
-
-person = Person('Dhruv', 24)
-with open('person.yml', 'w') as output_file:
-    yaml.dump(person, output_file)
+def transcode_file(request, filename):
+    command = 'ffmpeg -i "{source}" output_file.mpg'.format(source=filename)
+    subprocess.call(command, shell=True)  # a bad idea!
