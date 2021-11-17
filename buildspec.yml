@@ -10,7 +10,7 @@ phases:
   install:
     runtime-versions:
       java: openjdk8
-  pre-build:
+  pre_build:
     commands:
       - apt-get update
       - apt-get install -y jq
