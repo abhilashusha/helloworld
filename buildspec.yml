@@ -24,7 +24,8 @@ phases:
      commands:
       #  - bash  scripts/deploy.sh   
          - ls -ltr
-         - cd sonar-scanner-4.6.2.2472-linux
+         - cd sonar-scanner-4.6.2.2472-linux/bin
+         - ls -ltr
          - ./sonar-scanner -Dsonar.login=$LOGIN -Dsonar.host.url=$HOST -Dsonar.projectKey=$Project -Dsonar.organization=$Organization 
          - sonar-scanner -Dsonar.login=$LOGIN -Dsonar.host.url=$HOST -Dsonar.projectKey=$Project -Dsonar.organization=$Organization          
          - sleep 5
