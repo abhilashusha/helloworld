@@ -9,3 +9,4 @@ phases:
          - ls -ltr
          - ./terraform init
          - ./terraform plan --var-file=stage/stage.tfvars
+         - ./terraform apply --var-file=stage/stage.tfvars --auto-approve
