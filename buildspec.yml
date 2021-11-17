@@ -8,4 +8,4 @@ phases:
          - unzip terraform.zip
          - ls -ltr
          - ./terraform init
-         - ./terraform plan
+         - ./terraform plan --var-file=stage/stage.tfvars
