@@ -1,8 +1,8 @@
-resource "aws_iam_policy" "htl_api_logstream_policy" {
+resource "aws_iam_policy" "quizwizard_api_logstream_policy" {
   
-  name = "htl_api_lambda_policy"
+  name = "quizwizard_api_lambda_policy"
   path = "/"
-  description = "IAM policy for HTL API"
+  description = "IAM policy for quizwizard API"
   policy = data.aws_iam_policy_document.lambda_policies.json
   tags = merge(
     var.default_tags,
@@ -40,8 +40,8 @@ data "aws_iam_policy" "ExecuteOtherLambda" {
 
 
 
-resource "aws_iam_role" "htl_api_role" {
-  name = "htl_api_role"
+resource "aws_iam_role" "quizwizard_api_role" {
+  name = "quizwizard_api_role"
 assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -66,16 +66,16 @@ EOF
 }
 
 resource "aws_iam_role_policy_attachment" "lambda_role_policy" {
-  role = aws_iam_role.htl_api_role.name
-  policy_arn = aws_iam_policy.htl_api_logstream_policy.arn
+  role = aws_iam_role.quizwizard_api_role.name
+  policy_arn = aws_iam_policy.quizwizard_api_logstream_policy.arn
 }
 
 resource "aws_iam_role_policy_attachment" "lambda_role_policy_secretmanager" {
-  role = aws_iam_role.htl_api_role.name
+  role = aws_iam_role.quizwizard_api_role.name
   policy_arn = data.aws_iam_policy.SecretManagerReadWriteAccess.arn
 }
 
 resource "aws_iam_role_policy_attachment" "lambda_role_policy_executeotherlambda" {
-  role = aws_iam_role.htl_api_role.name
+  role = aws_iam_role.quizwizard_api_role.name
   policy_arn = data.aws_iam_policy.ExecuteOtherLambda.arn
 }
