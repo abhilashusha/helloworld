@@ -48,7 +48,7 @@ resource "aws_lambda_function" "htl_api_lambdas" {
     }
   )
   lifecycle {
-    ignore_changes = ["tags"]
+    ignore_changes = [tags]
   }
   
 }
