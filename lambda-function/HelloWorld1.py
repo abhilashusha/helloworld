@@ -23,6 +23,7 @@ def lambda_handler(event, context):
     print(" We will try to add new lines11")
     print(" We will try to add new lines12")
     print(" We will try to add new lines123")
+    print(" We will try to add new lines123")
 
     return {
         'statusCode': 200,
