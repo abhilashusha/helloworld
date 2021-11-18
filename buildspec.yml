@@ -19,7 +19,7 @@ phases:
       - ln -s apache-maven-3.8.3 maven
       - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
       - unzip  ./sonar-scanner-cli-4.6.2.2472-linux.zip
-      - export PATH=$PATH:/sonar-scanner-cli-4.6.2.2472-linux/bin
+      - export PATH=$PATH:$PWD/sonar-scanner-cli-4.6.2.2472-linux/bin
   build:
      commands:
       #  - bash  scripts/deploy.sh   
