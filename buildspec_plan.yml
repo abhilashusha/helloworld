@@ -35,4 +35,4 @@ phases:
          - ./terraform plan --var-file=stage/stage.tfvars -out tfplan
 artifacts: 
   files:
-    - '**/*'
+    - 'tfplan'
