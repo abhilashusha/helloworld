@@ -33,7 +33,6 @@ phases:
          - ls -ltr
          - ./terraform init
          - ./terraform plan --var-file=stage/stage.tfvars -out tfplan
-artifacts:
-  base-directory: outputDirectory
+artifacts: 
   files:
     - '**/*'
