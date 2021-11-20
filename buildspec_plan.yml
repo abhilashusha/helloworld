@@ -32,7 +32,7 @@ phases:
          - unzip terraform.zip
          - ls -ltr
          - ./terraform init
-         - ./terraform plan --var-file=stage/stage.tfvars -out tfplan
+         - ./terraform plan --var-file=stage/stage.tfvars -out tfplan.out
 artifacts: 
   files:
-    - 'tfplan'
+    - '**/*.out'
